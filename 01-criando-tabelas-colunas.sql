@@ -6,7 +6,6 @@ CREATE TABLE base_de_dados.users (
 	password_hash varchar(100) NOT NULL,
 
   CONSTRAINT users_unique UNIQUE KEY (email);
-  CONSTRAINT users_unique_1 UNIQUE KEY (password_hash)
 	CONSTRAINT users_pk PRIMARY KEY (id)
 );
 
@@ -17,7 +16,7 @@ CREATE TABLE base_de_dados.profiles (
 	user_id INTEGER NOT NULL,
 
 	CONSTRAINT profiles_pk PRIMARY KEY (id),
-	CONSTRAINT profiles_users_FK FOREIGN KEY (user_id) REFERENCES base_de_dados.profiles(id) ON DELETE CASCADE ON UPDATE CASCADE
+	CONSTRAINT profiles_users_FK FOREIGN KEY (user_id) REFERENCES base_de_dados.users(id) 
 )
 
 CREATE TABLE base_de_dados.roles (
