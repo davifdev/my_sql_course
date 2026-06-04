@@ -34,3 +34,5 @@ CREATE TABLE base_de_dados.users_roles (
 	CONSTRAINT users_roles_users_FK FOREIGN KEY (user_id) REFERENCES base_de_dados.users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT users_roles_roles_FK FOREIGN KEY (role_id) REFERENCES base_de_dados.roles(id) ON DELETE CASCADE ON UPDATE CASCADE
 )
+
+
